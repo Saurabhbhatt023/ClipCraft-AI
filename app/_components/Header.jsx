@@ -1,6 +1,8 @@
+"use client"
 import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import Authentication from './Authentication';
 
 const Header = () => {
   return (
@@ -13,7 +15,11 @@ const Header = () => {
     <h2 className='text-2xl font-bold'> Clip Craft</h2>
     </div>
     <div> 
+        <Authentication>
+
         <Button>Get Started</Button>
+        </Authentication>
+        
     </div>
     </div>
   );
