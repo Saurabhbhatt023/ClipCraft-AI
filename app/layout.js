@@ -1,3 +1,4 @@
+// "use client"
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import Provider from "./provider";
@@ -11,13 +12,11 @@ const outfit = Outfit({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning = {true}>
-      <body className={outfit.className}>
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={outfit.className} suppressHydrationWarning={true}>
         <Provider> 
-
-        {children}
+          {children}
         </Provider>
-        
       </body>
     </html>
   );

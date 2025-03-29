@@ -1,9 +1,10 @@
 "use client";
 import React, { useContext } from "react";
 import Image from "next/image";
+import Link from "next/link"; // Import the Link component
 import { Button } from "@/components/ui/button";
 import Authentication from "./Authentication";
-import { AuthContext } from "@/_context/AuthContext"; // Import the context
+import { AuthContext } from "../_context/AuthContext";
 
 const Header = () => {
   const { user } = useContext(AuthContext); // Use useContext to access the context
@@ -23,7 +24,9 @@ const Header = () => {
           </Authentication>
         ) : (
           <div className="flex items-center gap-3">
-            <Button>Dashboard</Button>
+            <Link href="/dashboard"> 
+              <Button>Dashboard</Button>
+            </Link>
             <Image
               src={user?.photoURL}
               alt="userImage"
